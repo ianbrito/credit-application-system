@@ -5,6 +5,7 @@ CREATE TABLE customers (
    cpf VARCHAR(255) NOT NULL,
    email VARCHAR(255) NOT NULL,
    password VARCHAR(255) NOT NULL,
+   income DECIMAL NOT NULL,
    zip_code VARCHAR(255) NOT NULL,
    street VARCHAR(255) NOT NULL,
    CONSTRAINT pk_customers PRIMARY KEY (id)

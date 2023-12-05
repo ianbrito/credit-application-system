@@ -1,6 +1,7 @@
 package me.dio.credit.application.system.entity
 
 import jakarta.persistence.*
+import java.math.BigDecimal
 
 @Entity
 @Table(name = "customers")
@@ -24,6 +25,9 @@ data class Customer(
     @Column(nullable = false)
     @Embedded
     var address: Address = Address(),
+
+    @Column(nullable = false)
+    var income: BigDecimal = BigDecimal.ZERO,
 
     @Column(nullable = false)
     @OneToMany(
