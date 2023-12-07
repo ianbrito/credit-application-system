@@ -1,6 +1,7 @@
 package me.dio.credit.application.system.service.impl
 
 import me.dio.credit.application.system.entity.Credit
+import me.dio.credit.application.system.entity.Customer
 import me.dio.credit.application.system.exception.BusinessException
 import me.dio.credit.application.system.repository.CreditRepository
 import me.dio.credit.application.system.service.ICreditService
@@ -23,7 +24,8 @@ class CreditService(
     }
 
     override fun findAllByCustomer(customerId: Long): List<Credit> {
-        return this.creditRepository.findAllByCustomerId(customerId)
+        val customer: Customer  = this.customerService.findById(customerId)
+        return this.creditRepository.findAllByCustomerId(customer.id!!)
     }
 
     override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {

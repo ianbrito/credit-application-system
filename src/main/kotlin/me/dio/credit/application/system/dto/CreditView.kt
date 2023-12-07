@@ -11,7 +11,8 @@ data class CreditView(
     val numberOfInstallment: Int,
     val status: Status,
     val emailCustomer: String?,
-    val incomeCustomer: BigDecimal?
+    val incomeCustomer: BigDecimal?,
+    val customerId: Long?,
 ) {
     constructor(credit: Credit) : this(
         creditCode = credit.creditCode,
@@ -19,6 +20,7 @@ data class CreditView(
         numberOfInstallment = credit.numberOfInstallments,
         status = credit.status,
         emailCustomer = credit.customer?.email,
-        incomeCustomer = credit.customer?.income
+        incomeCustomer = credit.customer?.income,
+        customerId = credit.customer?.id
     )
 }
