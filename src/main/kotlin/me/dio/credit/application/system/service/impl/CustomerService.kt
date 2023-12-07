@@ -15,7 +15,7 @@ class CustomerService(private val repository: CustomerRepository) : ICustomerSer
 
     override fun findById(id: Long): Customer {
         return this.repository.findById(id).orElseThrow {
-            throw BusinessException("Id not found")
+            throw BusinessException("Id $id not found")
         }
     }
 
